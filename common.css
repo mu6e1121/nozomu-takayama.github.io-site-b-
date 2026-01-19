@@ -1,0 +1,521 @@
+﻿/* 共通 */
+.eb-garamond {
+  font-family: "EB Garamond", serif;
+}
+img{
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+body{
+	font-size: 15px;
+	color: #4c4c4b;
+}
+body h1, h2, h3, h4, h5, h6, nav, a, .en, .lead {
+	font-family: "EB Garamond", serif;
+}
+.icon{
+	width: 20px;
+	height: auto;
+}
+ul{
+	list-style: none;
+}
+ul li a{
+	text-decoration: none;
+	color: #e2e2e2;
+}
+h3{
+	font-size: 36px;
+	text-align: center;
+}
+.lead{
+	text-align: center;
+}
+a:hover{
+	opacity: 0.6;
+}
+a{
+	transition: transform 0.25s ease, opacity 0.25s ease; /* 両方滑らかに変化 */
+}
+/* トップバナー */
+.top-nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 20px 40px;
+	background: rgba(0,0,0,0.3);
+	z-index: 9;
+}
+.top-nav ul {
+	display: flex;
+	justify-content: flex-end;
+	gap: 30px;
+	list-style: none;
+	align-items: center;
+
+}
+
+.hamburger {
+  display: none;
+}
+
+/* ABOUT以降 */
+body.show-hamburger .top-nav {
+	opacity: 0;
+	pointer-events: none;
+	display: none;
+}
+
+body.show-hamburger .hamburger {
+	  display: block;
+}
+.hamburger {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	width: 30px;
+	cursor: pointer;
+	z-index: 10;
+}
+.hamburger span {
+	display: block;
+	height: 3px;
+	width: 100%;
+	background-color: #FFFFFF;
+	margin: 5px 0;
+	transition: 0.4s;
+}
+/* メニューのスタイル */
+.ham-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 250px;
+	height: 100%;
+	background-color: #212121;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.5s ease;
+	padding: 20px;
+	box-sizing: border-box;
+	z-index: 5;
+}
+.ham-menu.open {
+	opacity: 1;
+	pointer-events: auto;
+}
+/* バツ印に変わるハンバーガーボタン */
+.hamburger.active span:nth-child(1) {
+	transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+	opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+	transform: rotate(-45deg) translate(6px, -6px);
+}
+/* ×ボタンは常に白 */
+.hamburger.active span {
+	background-color: #fff !important;
+}
+
+.ham-menu li{
+	padding-top: 50px;
+}
+/* NEWS以降のハンバーガー色 */
+.hamburger.black span {
+	background-color: #000;
+}
+/* NEWSより上のハンバーガー色 */
+.hamburger span {
+	background-color: white;
+}
+/* ハンバーガーメニュー終わり */
+
+.wrap{
+}
+
+#TOP{
+	position: relative;
+	text-align: center;
+	color: #e2e2e2;
+}
+#TOP h1{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	margin: 0;
+	padding: 0;
+	font-size: 60px;
+	white-space: nowrap;
+}
+#ABOUT {
+	position: relative;
+	text-align: center;
+	color: #fff;
+	background: url("img/about.jpg") center/cover no-repeat;
+	height: 1200px;
+}
+
+#ABOUT .about-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	max-width: 800px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+#ABOUT .about-text .intro{
+	font-size: 36px;
+	padding: 80px 0;	
+}
+#ABOUT .about-text p{
+	line-height: 2.5;
+}
+#NEWS{
+	background: #f4f4f4;
+	padding-top: 80px;
+}
+#NEWS .NEWS-inner{
+	max-width :820px;
+	margin: 70px auto;
+	height: 400px;
+}
+#NEWS .NEWS-inner .box{
+	display: flex;
+	gap: 50px;
+	border-bottom: 1px solid #b7b7b7;
+	padding-bottom: 5px;
+	margin-top: 50px;
+}
+
+#NEWS .NEWS-inner .box .box-right{
+	width: 90%;;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+
+}
+#NEWS .btn {
+	display: flex;
+	align-items: center;
+}
+.arrow{
+	position: relative;
+	display: inline-block;
+	padding: 0 0 0 16px;
+	color: #000;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 15px;
+}
+.arrow::before,.arrow::after{
+	position: absolute;
+	top: 5px;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	content: "";
+	vertical-align: middle;
+}
+
+.arrow::before{
+	box-sizing: border-box;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #4c4c4b;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+.arrow::after{
+	left: 5px;
+	width: 6px;
+	height: 6px;
+	border-top: 1px solid #4c4c4b;
+	border-right: 1px solid #4c4c4b;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.contents{
+	margin: 0 auto;
+}
+#NewArrivals .flex-container{
+	max-width : 1200px;
+	margin: 50px auto;
+	display: flex;
+	gap: 50px;
+}
+#NewArrivals .flex-container .flex-item{
+	width: 578px;
+}
+.menu{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #b7b7b7;
+	padding: 10px 0;
+}
+#NewArrivals .menu-left p{
+	font-size: 18px;
+}
+.text-box{
+	padding: 8px 0;
+}
+.en{
+	font-size: 12px;
+}
+#MENU .flex-container{
+	max-width: 1200px;
+	margin: 50px auto;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	border-bottom: 1px solid #b7b7b7;
+	padding-bottom: 100px;
+}
+#MENU .flex-item{
+	width: 270px;
+	margin-bottom: 30px;
+}
+#MENU .menu-left p{
+	font-size: 16px;
+}
+#ACCESS .flex-container{
+	max-width: 1200px;
+	display: flex;
+	margin: 50px auto;
+}
+#ACCESS .box-left{
+	width: 50%;
+}
+#ACCESS table{
+	border-spacing: 30px;
+}
+#ACCESS td{
+	padding-right: 40px;
+}
+#ACCESS .box-right{
+	width: 50%;
+}
+footer{
+	width: 100%;
+	padding-bottom: 30px;
+	background: #212121;
+}
+.f-nav{
+	max-width: 600px;
+	margin: 0 auto;
+	padding-top: 100px;
+}
+.f-nav ul{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+footer p{
+	text-align: center;
+	color: #e2e2e2;
+	font-size: 12px;
+	padding-top: 40px;
+}
+
+/* タブレット（781〜1024） */
+@media screen and (min-width: 781px) and (max-width: 1024px) {
+
+  #TOP h1{
+    font-size: 55px;
+    max-width: 90%;
+  }
+
+  #ABOUT{
+    height: 1000px;
+  }
+
+  #ABOUT .about-text{
+    max-width: 700px;
+    padding: 15px;
+  }
+
+  #NEWS{
+    padding-top: 60px;
+  }
+  #NEWS .NEWS-inner{
+    margin: 50px 20px;
+    height: auto;
+  }
+  #NEWS .NEWS-inner .box{
+    gap: 30px;
+  }
+
+  #NewArrivals .flex-container,
+  #MENU .flex-container,
+  #ACCESS .flex-container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  #NewArrivals .flex-container{
+    flex-direction: column;
+    gap: 40px;
+    margin: 40px 0;
+  }
+  #NewArrivals .flex-container .flex-item{
+    width: 100%;
+  }
+
+  #MENU .flex-container{
+    justify-content: space-between;
+    padding-bottom: 60px;
+  }
+  #MENU .flex-item{
+    width: 48%;
+  }
+
+  #ACCESS .flex-container{
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  #ACCESS .box-left,
+  #ACCESS .box-right{
+    width: 100%;
+  }
+  #ACCESS table{
+    border-spacing: 20px;
+  }
+
+  footer{
+    padding-bottom: 40px;
+  }
+  .f-nav ul{
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+}
+
+/* スマホ用レスポンシブ（〜780） */
+@media screen and (max-width: 780px) {
+  #TOP h1{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 50px;
+    max-width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+  }
+  #ABOUT{
+    position: relative;
+    text-align: center;
+    color: #e2e2e2;
+  }
+  #ABOUT img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #ABOUT .about-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 95%;
+    padding: 0;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+  }
+
+  /* テキストの自動縮小 */
+  #ABOUT .about-text h3,
+  #ABOUT .about-text p,
+  #ABOUT .about-text .intro{
+    margin: 5px 0;
+    line-height: 2;
+  }  
+
+  /* NEWS */
+  #NEWS{
+    padding-top: 40px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+  #NEWS .NEWS-inner{
+    margin: 40px 20px;
+    height: auto;
+  }
+  #NEWS .NEWS-inner .box{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  #NEWS .NEWS-inner .box .box-right {
+    width: 100%;
+  }
+
+  /* New Arrivals */
+  #NewArrivals .flex-container,
+  #MENU .flex-container,
+  #ACCESS .flex-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+  #NewArrivals .flex-container{
+    width: 100%;
+    flex-direction: column;
+    gap: 40px;
+    margin: 30px 0;
+  }
+  #NewArrivals .flex-container .flex-item{
+    width: 100%;
+  }
+
+  /* MENU */
+  #MENU .flex-container{
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 40px;
+  }
+  #MENU .flex-item{
+    width: 48%;
+  }
+
+  /* ACCESS */
+  #ACCESS .flex-container{
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  #ACCESS .box-left,
+  #ACCESS .box-right{
+    width: 100%;
+  }
+  #ACCESS table{
+    border-spacing: 15px;
+  }
+
+  /* footer */
+  footer{
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .f-nav ul{
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+}
